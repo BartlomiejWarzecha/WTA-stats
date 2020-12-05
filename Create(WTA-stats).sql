@@ -62,30 +62,3 @@ CREATE TABLE dbo.Tournaments
 );
 
 
--- Insert rows into table 'Customers'
-INSERT INTO dbo.Players
-   ([PlayerId],[Name],[Country],[Age])
-VALUES
-
-
-
-SELECT * 
-FROM Players
-WHERE Name LIKE('%Kon%')
-
-
-SELECT * FROM dbo.Players;
-
-SELECT AVG(CAST(Age AS INT) )
-FROM Players
-
-
-/* RankingID        INT    NOT NULL   PRIMARY KEY, -- primary key column
- PlayerId int FOREIGN KEY REFERENCES Players(PlayerId),
- Points      [NVARCHAR](50)  NOT NULL,
- Position  [NVARCHAR](50)  NOT NULL,
- Date     [NVARCHAR](50)  NOT NULL
-*/
-
-
-INSERT INTO  table Players AND TOurnaments dasda
