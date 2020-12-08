@@ -12,6 +12,9 @@ FROM Players
 GROUP BY Country
 
 
+SELECT PlayerID, Name
+FROM Players
+
 /*  */
 /*  */
 /*  */
