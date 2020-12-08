@@ -11,6 +11,11 @@ SELECT COUNT(*), Country
 FROM Players
 GROUP BY Country
 
+SELECT * 
+FROM Players
+
+SELECT * 
+FROM Ranking
 
 SELECT PlayerID, Name
 FROM Players
