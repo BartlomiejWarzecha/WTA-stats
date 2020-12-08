@@ -43,7 +43,7 @@ CREATE TABLE dbo.GrandSlams
 (
    GrandSlamID        INT    NOT NULL   PRIMARY KEY, -- primary key column
    PlayerId int FOREIGN KEY REFERENCES Players(PlayerId),
-   Postion      [NVARCHAR](50)  NOT NULL,
+   Position      [NVARCHAR](50)  NOT NULL,
    GrandSlam  [NVARCHAR](50)  NOT NULL,
    Date     [NVARCHAR](50)  NOT NULL
 );
