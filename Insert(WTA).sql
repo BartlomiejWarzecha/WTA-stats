@@ -9,10 +9,8 @@ VALUES
 INSERT INTO dbo.Ranking
    ([RankingID],[PlayerId],[Points],[Position],[Date])
 VALUES
-   ('31', '16', '3210','1','2019-06-24')
-/*End with 31 */
+   ('75', '3', '3016','15','2020-12-07')
+/*End without 61*/
 
-INSERT INTO dbo.Ranking
-   ([RankingID],[PlayerId],[Points],[Position],[Date])
-VALUES
-   ('', '', '','','2018-06-25')
+DELETE FROM Ranking
+WHERE RankingID IN()
