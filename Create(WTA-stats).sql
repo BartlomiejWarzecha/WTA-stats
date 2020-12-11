@@ -36,8 +36,8 @@ CREATE TABLE dbo.Ranking
 );
 
 
-IF OBJECT_ID('dbo.GrandSlam', 'U') IS NOT NULL
-DROP TABLE dbo.GrandSlam
+IF OBJECT_ID('dbo.GrandSlams', 'U') IS NOT NULL
+DROP TABLE dbo.GrandSlams
 
 CREATE TABLE dbo.GrandSlams
 (

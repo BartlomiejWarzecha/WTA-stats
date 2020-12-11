@@ -6,6 +6,9 @@ FROM Players
 SELECT * 
 FROM Ranking
 
+SELECT * 
+FROM GrandSlams
+
 SELECT PlayerID, Name
 FROM Players
 
@@ -19,12 +22,42 @@ FROM Players
 
 -- 5 queries between tables
 
-/* Jaka jest średnia wieku zawodniczek z ostatnich 3 lat? 27 */
+/* Jaka jest średnia wieku zawodniczek z ostatnich 3 lat top 15? 27 */
 
-SELECT AVG(CAST(Age as INT))
+SELECT AVG(CAST(P.Age as INT)) as 
+'AVG AGE', R.Position, P.Name
+FROM Players as P INNER JOIN Ranking as R
+ON R.PlayerId = P.PlayerId
+GROUP BY Name, R.Position
+Having Position <= 8
+
+SELECT AVG(CAST(P.Age as INT)) as 
+'AVG AGE'
+FROM Players as P INNER JOIN Ranking as R
+ON R.PlayerId = P.PlayerId
+WHERE R.position <= 15
+
+/* Jaka jest średnia wieku zawodniczek z ostatnich 3 lat top 8? 27 */
+
+SELECT AVG(CAST(P.Age as INT)) as 
+'AVG AGE'
+FROM Players as P INNER JOIN Ranking as R
+ON R.PlayerId = P.PlayerId
+WHERE R.position <= 8
+
+/* Jaki kraj ma najwiecej reprezentatek w top 15? USA 5*/
+
+SELECT COUNT(Country) as 'Most frequent country', Country 
 FROM Players
+GROUP BY Country 
 
-/* Jaki kraj ma najwiecej reprezentatek? USA 5*/
+/* Jaki kraj ma najwiecej reprezentatek w top 8? USA 5*/
+
+SELECT COUNT(Country) as 'Most frequent country', Country 
+FROM Players as P INNER JOIN Ranking as R ON
+R.PlayerId = P.PlayerId
+GROUP BY Country, R.Position
+HAVING R.position <= 8
 
 
 
@@ -66,6 +99,14 @@ WHERE position <= 8 AND Ranking.Date LIKE ('%12%')
 GROUP BY Players.Name
 WITH CUBE
 ORDER BY "Avarage points in top 8" DESC
+
+/* Jaki jest próg wejśćiowy do top 15?
+
+
+
+
+/* Jaki jest próg wejśćiowy do top 8?
+
 
 
 
