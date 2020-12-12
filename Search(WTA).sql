@@ -29,7 +29,7 @@ SELECT AVG(CAST(P.Age as INT)) as
 FROM Players as P INNER JOIN Ranking as R
 ON R.PlayerId = P.PlayerId
 GROUP BY Name, R.Position
-Having Position <= 8
+Having Position <=15 
 
 SELECT AVG(CAST(P.Age as INT)) as 
 'AVG AGE'
@@ -48,7 +48,8 @@ WHERE R.position <= 8
 /* Jaki kraj ma najwiecej reprezentatek w top 15? USA 5*/
 
 SELECT COUNT(Country) as 'Most frequent country', Country 
-FROM Players
+FROM Players INNER JOIN Ranking ON Players.PlayerId = Ranking.PlayerId
+WHERE Ranking.position <= 15
 GROUP BY Country 
 
 /* Jaki kraj ma najwiecej reprezentatek w top 8? USA 5*/
