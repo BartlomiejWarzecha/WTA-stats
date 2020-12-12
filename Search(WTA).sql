@@ -4,6 +4,10 @@ SELECT *
 FROM Players
 
 SELECT * 
+FROM Players
+WHERE Name LIKE('%Von%')
+
+SELECT * 
 FROM Ranking
 
 SELECT * 
@@ -47,20 +51,17 @@ WHERE R.position <= 8
 
 /* Jaki kraj ma najwiecej reprezentatek w top 15? USA 5*/
 
-SELECT COUNT(Country) as 'Most frequent country', Country 
+SELECT COUNT(Country) as 'Most frequent country', Country
 FROM Players INNER JOIN Ranking ON Players.PlayerId = Ranking.PlayerId
-WHERE Ranking.position <= 15
-GROUP BY Country 
-
+WHERE Ranking.position <= 8
+GROUP BY Country WITH ROLLUP 
 /* Jaki kraj ma najwiecej reprezentatek w top 8? USA 5*/
 
 SELECT COUNT(Country) as 'Most frequent country', Country 
 FROM Players as P INNER JOIN Ranking as R ON
 R.PlayerId = P.PlayerId
-GROUP BY Country, R.Position
+GROUP BY R.Position, Country
 HAVING R.position <= 8
-
-
 
 /* Jaka jest średnia pozycja zawodniczki w top 15? Ile razy zawodniczka znalazła się w top 15? 
 Jaką ma średnią punktów gdy jest w top 15? Jaka jest średnia punktów top 15 ostanich 3 lat  
