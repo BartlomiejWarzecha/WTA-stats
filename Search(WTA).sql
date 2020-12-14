@@ -110,10 +110,22 @@ ORDER BY "Avarage points in top 8" DESC
 /* Jaki jest próg wejśćiowy do top 8?
 
 
+/* Ile zawodniczek wypada z topowej 8, w 2018 na 2019 rok */
+
+SELECT Name, Country, age, P.PlayerId, R.Position, R.Date, AVG(CAST(R.position as INT))
+FROM Players P
+JOIN Ranking R ON P.PlayerId = R.PlayerID
+WHERE R.Position <= 8
+GROUP BY Name ,R.date, Country, age, P.PlayerId, R.Position, R.Date
+HAVING R.date, Country, age, P.PlayerId, R.Position, R.Date
 
 
+/* Testing results  */
 
-/*  */
+SELECT * from Players where playerID  = 19
+SELECT * from Ranking where playerID  = 19
+
+
 /*  */
 /*  */
 /*  */
