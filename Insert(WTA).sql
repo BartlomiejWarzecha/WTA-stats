@@ -16,7 +16,7 @@ VALUES
 INSERT INTO dbo.GrandSlams
    ([GrandSlamID],[PlayerId],[Position],[GrandSlam],[Date])
 VALUES
-   ('33', '14', 'Q','Roland Garros','2018')
+   ('61', '15', 'Q','US Open','2020')
 
 /Missing 11, next 20
 
