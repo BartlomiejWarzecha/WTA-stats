@@ -102,12 +102,50 @@ GROUP BY Players.Name
 WITH CUBE
 ORDER BY "Avarage points in top 8" DESC
 
-/* Jaki jest próg wejśćiowy do top 15?
+/*//////////////////////////////////////////////////////////////////*/
+
+/* Jaki jest próg wejśćiowy do top 15?*/
+
+SELECT  AVG(CAST(Points as INT)) as "Avarage top 15 minimal points "
+FROM Ranking
+WHERE position = 15 
+
+/* Jaki jest próg wejśćiowy do top 15 w czerwcu?*/
+
+SELECT  AVG(CAST(Points as INT)) as "Avarage top 15 minimal points June"
+FROM Ranking
+WHERE position = 15  AND Ranking.Date LIKE ('%06%') 
+
+/* Jaki jest próg wejśćiowy do top 15 w Grudniu?*/
+
+SELECT  AVG(CAST(Points as INT)) as "Avarage top 15 minimal points December"
+FROM Ranking
+WHERE position = 15  AND Ranking.Date LIKE ('%12%') 
+
+/*//////////////////////////////////////////////////////////////////*/
+
+/* Jaki jest próg wejśćiowy do top 8?*/
+
+SELECT  AVG(CAST(Points as INT)) as "Avarage top 8 minimal points "
+FROM Ranking
+WHERE position = 8 
 
 
+/* Jaki jest próg wejśćiowy do top 8 w czerwcu?*/
+
+SELECT  AVG(CAST(Points as INT)) as "Avarage top 8 minimal points June"
+FROM Ranking
+WHERE position = 8  AND Ranking.Date LIKE ('%06%') 
+
+/* Jaki jest próg wejśćiowy do top 8 w Grudniu?*/
+
+SELECT  AVG(CAST(Points as INT)) as "Avarage top 8 minimal points December"
+FROM Ranking
+WHERE position = 8  AND Ranking.Date LIKE ('%12%') 
+
+/*//////////////////////////////////////////////////////////////////*/
 
 
-/* Jaki jest próg wejśćiowy do top 8?
 
 
 /* Ile zawodniczek wypada z topowej 8, w 2018 na 2019 rok */
@@ -126,7 +164,13 @@ SELECT * from Players where playerID  = 19
 SELECT * from Ranking where playerID  = 19
 
 
-/*  */
+/*  Ile zawodniczel z top 15 ostanich 3 lat doszło przynajmniej do ćwierćfianału wielkich turniejów?
+Ile było niespodzianek? */
+
+SELECT Count(GrandSlam), R.Name
+FROM 
+
+
 /*  */
 /*  */
 /*  */
