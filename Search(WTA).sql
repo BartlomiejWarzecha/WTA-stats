@@ -103,6 +103,7 @@ WITH CUBE
 ORDER BY "How many times in top 8" DESC, "Avarage points in top 8" DESC
 
 /**************************************************/
+
 /* Czerwiec Jaka jest średnia pozycja zawodniczki w top 8 ? Czerwiec Ile razy zawodniczka znalazła się w top 8? 
 Czerwiec Jaką ma średnią punktów gdy jest w top 8?  Czerwiec Jaka jest średnia punktów top 8 ostanich 3 lat*/
 
@@ -163,7 +164,7 @@ SELECT Name, Country, age, P.PlayerId, R.Position, R.Date, AVG(CAST(R.position a
 FROM Players P
 JOIN Ranking R ON P.PlayerId = R.PlayerID
 WHERE R.Position <= 8
-GROUP BY Name ,R.date, Country, age, P.PlayerId, R.Position, R.Date
+GROUP BY Name, R.date, Country, age, P.PlayerId, R.Position, R.Date
 HAVING R.date, Country, age, P.PlayerId, R.Position, R.Date
 
 /* Testing results  */
@@ -174,7 +175,7 @@ SELECT * from Ranking where playerID  = 19
 
 /**************************************************/
 
-/*  Ile zawodniczel z top 15 ostanich 3 lat doszło przynajmniej do ćwierćfianału wielkich turniejów?
+/*  Ile zawodniczek z top 15 ostanich 3 lat doszło przynajmniej do ćwierćfianału wielkich turniejów?
 Ile było niespodzianek? */
 
 SELECT Count(GrandSlam), R.Name

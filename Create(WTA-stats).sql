@@ -66,3 +66,7 @@ CREATE TABLE dbo.Tournaments
 ALTER TABLE dbo.Tournaments
 ADD LEVEL [NVARCHAR](50);
 
+ALTER TABLE dbo.Tournaments
+ADD Position [NVARCHAR](10);
+
+
