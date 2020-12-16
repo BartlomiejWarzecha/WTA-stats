@@ -6,12 +6,13 @@ FROM Players
 SELECT * 
 FROM Players
 WHERE Name LIKE('%Von%')
-
+/**************************************************/
 SELECT * 
 FROM Ranking
-
+/**************************************************/
 SELECT * 
 FROM GrandSlams
+/**************************************************/
 
 SELECT PlayerID, Name
 FROM Players
@@ -26,6 +27,8 @@ FROM Players
 
 -- 5 queries between tables
 
+
+/**************************************************/
 /* Jaka jest średnia wieku zawodniczek z ostatnich 3 lat top 15? 27 */
 
 SELECT AVG(CAST(P.Age as INT)) as 
@@ -41,6 +44,7 @@ FROM Players as P INNER JOIN Ranking as R
 ON R.PlayerId = P.PlayerId
 WHERE R.position <= 15
 
+/**************************************************/
 /* Jaka jest średnia wieku zawodniczek z ostatnich 3 lat top 8? 27 */
 
 SELECT AVG(CAST(P.Age as INT)) as 
@@ -49,12 +53,17 @@ FROM Players as P INNER JOIN Ranking as R
 ON R.PlayerId = P.PlayerId
 WHERE R.position <= 8
 
+/**************************************************/
+
 /* Jaki kraj ma najwiecej reprezentatek w top 15? USA 5*/
 
 SELECT COUNT(Country) as 'Most frequent country', Country
 FROM Players INNER JOIN Ranking ON Players.PlayerId = Ranking.PlayerId
 WHERE Ranking.position <= 8
 GROUP BY Country WITH ROLLUP 
+
+/**************************************************/
+
 /* Jaki kraj ma najwiecej reprezentatek w top 8? USA 5*/
 
 SELECT COUNT(Country) as 'Most frequent country', Country 
@@ -62,6 +71,8 @@ FROM Players as P INNER JOIN Ranking as R ON
 R.PlayerId = P.PlayerId
 GROUP BY R.Position, Country
 HAVING R.position <= 8
+
+/**************************************************/
 
 /* Jaka jest średnia pozycja zawodniczki w top 15? Ile razy zawodniczka znalazła się w top 15? 
 Jaką ma średnią punktów gdy jest w top 15? Jaka jest średnia punktów top 15 ostanich 3 lat  
@@ -77,6 +88,8 @@ WITH CUBE
 ORDER BY "How many times in top 15" DESC, "Avarage points in top 15" DESC
 
 
+/**************************************************/
+
 /* Jaka jest średnia pozycja zawodniczki w top 8? Ile razy zawodniczka znalazła się w top 8? 
 Jaką ma średnią punktów gdy jest w top 8? Jaka jest średnia punktów top 8 ostanich 3 lat */
 
@@ -89,7 +102,7 @@ GROUP BY Players.Name
 WITH CUBE
 ORDER BY "How many times in top 8" DESC, "Avarage points in top 8" DESC
 
-
+/**************************************************/
 /* Czerwiec Jaka jest średnia pozycja zawodniczki w top 8 ? Czerwiec Ile razy zawodniczka znalazła się w top 8? 
 Czerwiec Jaką ma średnią punktów gdy jest w top 8?  Czerwiec Jaka jest średnia punktów top 8 ostanich 3 lat*/
 
@@ -102,8 +115,8 @@ GROUP BY Players.Name
 WITH CUBE
 ORDER BY "Avarage points in top 8" DESC
 
-/*//////////////////////////////////////////////////////////////////*/
 
+/**************************************************/
 /* Jaki jest próg wejśćiowy do top 15?*/
 
 SELECT  AVG(CAST(Points as INT)) as "Avarage top 15 minimal points "
@@ -122,14 +135,13 @@ SELECT  AVG(CAST(Points as INT)) as "Avarage top 15 minimal points December"
 FROM Ranking
 WHERE position = 15  AND Ranking.Date LIKE ('%12%') 
 
-/*//////////////////////////////////////////////////////////////////*/
+/**************************************************/
 
 /* Jaki jest próg wejśćiowy do top 8?*/
 
 SELECT  AVG(CAST(Points as INT)) as "Avarage top 8 minimal points "
 FROM Ranking
 WHERE position = 8 
-
 
 /* Jaki jest próg wejśćiowy do top 8 w czerwcu?*/
 
@@ -143,10 +155,7 @@ SELECT  AVG(CAST(Points as INT)) as "Avarage top 8 minimal points December"
 FROM Ranking
 WHERE position = 8  AND Ranking.Date LIKE ('%12%') 
 
-/*//////////////////////////////////////////////////////////////////*/
-
-
-
+/**************************************************/
 
 /* Ile zawodniczek wypada z topowej 8, w 2018 na 2019 rok */
 
@@ -157,12 +166,13 @@ WHERE R.Position <= 8
 GROUP BY Name ,R.date, Country, age, P.PlayerId, R.Position, R.Date
 HAVING R.date, Country, age, P.PlayerId, R.Position, R.Date
 
-
 /* Testing results  */
+
 
 SELECT * from Players where playerID  = 19
 SELECT * from Ranking where playerID  = 19
 
+/**************************************************/
 
 /*  Ile zawodniczel z top 15 ostanich 3 lat doszło przynajmniej do ćwierćfianału wielkich turniejów?
 Ile było niespodzianek? */

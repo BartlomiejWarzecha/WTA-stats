@@ -23,6 +23,7 @@ CREATE TABLE dbo.Players
    Age     [NVARCHAR](50)  NOT NULL
 );
 
+
 IF OBJECT_ID('dbo.Ranking', 'U') IS NOT NULL
 DROP TABLE dbo.Ranking
 
@@ -58,7 +59,10 @@ CREATE TABLE dbo.Tournaments
    PlayerId int FOREIGN KEY REFERENCES Players(PlayerId),
    Court     [NVARCHAR](50)  NOT NULL,
    City  [NVARCHAR](50)  NOT NULL,
-   Date     [NVARCHAR](50)  NOT NULL
+   Date     [NVARCHAR](50)  NOT NULL,
+   LEVEL [NVARCHAR](50)
 );
 
+ALTER TABLE dbo.Tournaments
+ADD LEVEL [NVARCHAR](50);
 
