@@ -13,6 +13,9 @@ FROM Ranking
 SELECT * 
 FROM GrandSlams
 /**************************************************/
+SELECT * 
+FROM Tournaments
+/**************************************************/
 
 SELECT PlayerID, Name
 FROM Players
