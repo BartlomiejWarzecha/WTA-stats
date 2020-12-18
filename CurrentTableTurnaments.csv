@@ -1,42 +1,86 @@
 TournamentsID,PlayerId,Court,City,Date,LEVEL,Position
-1,17,Hard,Indian Wells,2018,Premier Mandatory,W
-2,14,Hard,Indian Wells,2018,Premier Mandatory,F
-3,1,Hard,Indian Wells,2018,Premier Mandatory,S
-4,9,Hard,Indian Wells,2018,Premier Mandatory,S
-5,7,Hard,Indian Wells,2018,Premier Mandatory,Q
-6,27,Hard,Indian Wells,2018,Premier Mandatory,Q
-7,11,Hard,Indian Wells,2018,Premier Mandatory,Q
-8,24,Hard,Indian Wells,2019,Premier Mandatory,W
-9,11,Hard,Indian Wells,2019,Premier Mandatory,F
-10,22,Hard,Indian Wells,2019,Premier Mandatory,S
-11,5,Hard,Indian Wells,2019,Premier Mandatory,S
-12,3,Hard,Indian Wells,2019,Premier Mandatory,Q
-13,9,Hard,Indian Wells,2019,Premier Mandatory,Q
-14,7,Hard,Indian Wells,2019,Premier Mandatory,Q
-15,4,Hard,Miami,2018,Premier Mandatory,W
-16,12,Hard,Miami,2018,Premier Mandatory,F
-17,28,Hard,Miami,2018,Premier Mandatory,S
-18,7,Hard,Miami,2018,Premier Mandatory,Q
-19,11,Hard,Miami,2018,Premier Mandatory,Q
-20,9,Hard,Miami,2018,Premier Mandatory,Q
-21,5,Hard,Miami,2018,Premier Mandatory,Q
-22,16,Hard,Miami,2019,Premier Mandatory,W
-23,7,Hard,Miami,2019,Premier Mandatory,F
-24,1,Hard,Miami,2019,Premier Mandatory,S
-25,8,Hard,Miami,2019,Premier Mandatory,Q
-26,23,Hard,Miami,2019,Premier Mandatory,Q
-27,8,Clay,Madrid,2018,Premier Mandatory,W
-28,18,Clay,Madrid,2018,Premier Mandatory,F
-29,7,Clay,Madrid,2018,Premier Mandatory,S
-30,14,Clay,Madrid,2018,Premier Mandatory,Q
-31,1,Clay,Madrid,2018,Premier Mandatory,Q
-32,18,Clay,Madrid,2019,Premier Mandatory,W
-33,1,Clay,Madrid,2019,Premier Mandatory,F
-34,4,Clay,Madrid,2019,Premier Mandatory,S
-35,22,Clay,Madrid,2019,Premier Mandatory,S
-36,8,Clay,Madrid,2019,Premier Mandatory,Q
-37,27,Clay,Madrid,2019,Premier Mandatory,Q
-38,17,Clay,Madrid,2019,Premier Mandatory,Q
-39,16,Clay,Madrid,2019,Premier Mandatory,Q
-40,2,Hard,Beijing,2018,Premier Mandatory,W
-41,19,Hard,Beijing,2018,Premier Mandatory,F
+1,17,Hard,Indian Wells,2018,WTA 1000,W
+2,14,Hard,Indian Wells,2018,WTA 1000,F
+3,1,Hard,Indian Wells,2018,WTA 1000,S
+4,9,Hard,Indian Wells,2018,WTA 1000,S
+5,7,Hard,Indian Wells,2018,WTA 1000,Q
+6,27,Hard,Indian Wells,2018,WTA 1000,Q
+7,11,Hard,Indian Wells,2018,WTA 1000,Q
+8,24,Hard,Indian Wells,2019,WTA 1000,W
+9,11,Hard,Indian Wells,2019,WTA 1000,F
+10,22,Hard,Indian Wells,2019,WTA 1000,S
+11,5,Hard,Indian Wells,2019,WTA 1000,S
+12,3,Hard,Indian Wells,2019,WTA 1000,Q
+13,9,Hard,Indian Wells,2019,WTA 1000,Q
+14,7,Hard,Indian Wells,2019,WTA 1000,Q
+15,4,Hard,Miami,2018,WTA 1000,W
+16,12,Hard,Miami,2018,WTA 1000,F
+17,28,Hard,Miami,2018,WTA 1000,S
+18,7,Hard,Miami,2018,WTA 1000,Q
+19,11,Hard,Miami,2018,WTA 1000,Q
+20,9,Hard,Miami,2018,WTA 1000,Q
+21,5,Hard,Miami,2018,WTA 1000,Q
+22,16,Hard,Miami,2019,WTA 1000,W
+23,7,Hard,Miami,2019,WTA 1000,F
+24,1,Hard,Miami,2019,WTA 1000,S
+25,8,Hard,Miami,2019,WTA 1000,Q
+26,23,Hard,Miami,2019,WTA 1000,Q
+27,8,Clay,Madrid,2018,WTA 1000,W
+28,18,Clay,Madrid,2018,WTA 1000,F
+29,7,Clay,Madrid,2018,WTA 1000,S
+30,14,Clay,Madrid,2018,WTA 1000,Q
+31,1,Clay,Madrid,2018,WTA 1000,Q
+32,18,Clay,Madrid,2019,WTA 1000,W
+33,1,Clay,Madrid,2019,WTA 1000,F
+34,4,Clay,Madrid,2019,WTA 1000,S
+35,22,Clay,Madrid,2019,WTA 1000,S
+36,8,Clay,Madrid,2019,WTA 1000,Q
+37,27,Clay,Madrid,2019,WTA 1000,Q
+38,17,Clay,Madrid,2019,WTA 1000,Q
+39,16,Clay,Madrid,2019,WTA 1000,Q
+40,2,Hard,Beijing,2018,WTA 1000,W
+41,19,Hard,Beijing,2018,WTA 1000,F
+42,23,Hard,Beijing,2018,WTA 1000,S
+43,17,Hard,Beijing,2018,WTA 1000,S
+44,20,Hard,Beijing,2018,WTA 1000,Q
+45,17,Hard,Beijing,2019,WTA 1000,W
+46,16,Hard,Beijing,2019,WTA 1000,F
+47,2,Hard,Beijing,2019,WTA 1000,S
+48,18,Hard,Beijing,2019,WTA 1000,S
+49,24,Hard,Beijing,2019,WTA 1000,Q
+50,14,Hard,Beijing,2019,WTA 1000,Q
+51,5,Hard,Beijing,2019,WTA 1000,Q
+52,8,Hard,Doha,2018,WTA 1000,W
+53,3,Hard,Doha,2018,WTA 1000,F
+54,2,Hard,Doha,2018,WTA 1000,S
+55,1,Hard,Doha,2018,WTA 1000,S
+56,13,Hard,Doha,2018,WTA 1000,Q
+57,11,Hard,Doha,2018,WTA 1000,Q
+58,6,Hard,Doha,2018,WTA 1000,Q
+59,15,Hard,Doha,2019,WTA 1000,W
+60,1,Hard,Doha,2019,WTA 1000,F
+61,5,Hard,Doha,2019,WTA 1000,S
+62,11,Hard,Doha,2019,WTA 1000,S
+63,18,Hard,Doha,2019,WTA 1000,Q
+64,13,Hard,Doha,2019,WTA 1000,Q
+66,20,Hard,Doha,2020,WTA 1000,W
+67,8,Hard,Doha,2020,WTA 1000,F
+68,16,Hard,Doha,2020,WTA 1000,S
+69,3,Hard,Doha,2020,WTA 1000,Q
+70,22,Hard,Doha,2020,WTA 1000,Q
+71,1,Clay,Rome,2020,WTA 1000,W
+72,7,Clay,Rome,2020,WTA 1000,F
+73,3,Clay,Rome,2020,WTA 1000,S
+74,15,Clay,Rome,2020,WTA 1000,Q
+75,5,Clay,Rome,2020,WTA 1000,Q
+76,28,Clay,Rome,2020,WTA 1000,Q
+77,7,Clay,Rome,2019,WTA 1000,W
+78,25,Clay,Rome,2019,WTA 1000,F
+79,18,Clay,Rome,2019,WTA 1000,S
+80,28,Clay,Rome,2019,WTA 1000,Q
+81,5,Clay,Rome,2018,WTA 1000,W
+82,1,Clay,Rome,2018,WTA 1000,F
+83,6,Clay,Rome,2018,WTA 1000,Q
+87,2,Clay,Rome,2018,WTA 1000,Q
+88,12,Clay,Rome,2018,WTA 1000,Q
+89,11,Clay,Rome,2018,WTA 1000,Q

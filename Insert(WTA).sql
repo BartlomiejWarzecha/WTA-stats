@@ -19,8 +19,13 @@ VALUES
 INSERT INTO dbo.Tournaments
    ([TournamentsID],[PlayerId],[Court],[City],[Date],[LEVEL],[Position])
 VALUES
-   ('41', '19','Hard','Beijing','2018', 'Premier Mandatory', 'F')
+   ('89', '11','Clay','Rome','2018', 'WTA 1000', 'Q')
    
+UPDATE Tournaments
+SET 
+    LEVEL = 'WTA 1000'
+WHERE
+    LEVEL = 'Premier Mandatory'
 
 DELETE FROM Ranking
 WHERE RankingID IN(23)
@@ -29,4 +34,4 @@ DELETE FROM GrandSlams
 WHERE GrandSlamID IN(30)
 
 DELETE FROM Tournaments
-WHERE TournamentsID IN(17,16)
+WHERE TournamentsID IN(60)
