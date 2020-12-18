@@ -14,12 +14,12 @@ VALUES
 INSERT INTO dbo.GrandSlams
    ([GrandSlamID],[PlayerId],[Position],[GrandSlam],[Date])
 VALUES
-   ('61', '15', 'Q','US Open','2020')
+   ('6', '15', 'Q','US Open','2020')
 
 INSERT INTO dbo.Tournaments
    ([TournamentsID],[PlayerId],[Court],[City],[Date],[LEVEL],[Position])
 VALUES
-   ('89', '11','Clay','Rome','2018', 'WTA 1000', 'Q')
+   ('85', '12','Clay','Rome','2018', 'WTA 1000', 'Q')
    
 UPDATE Tournaments
 SET 
@@ -34,4 +34,4 @@ DELETE FROM GrandSlams
 WHERE GrandSlamID IN(30)
 
 DELETE FROM Tournaments
-WHERE TournamentsID IN(60)
+WHERE TournamentsID IN(87,88)
