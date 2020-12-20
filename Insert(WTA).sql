@@ -34,4 +34,4 @@ DELETE FROM GrandSlams
 WHERE GrandSlamID IN(30)
 
 DELETE FROM Tournaments
-WHERE TournamentsID IN(87,88)
+WHERE TournamentsID IN(89)

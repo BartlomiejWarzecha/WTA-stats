@@ -96,14 +96,16 @@ ORDER BY "How many times in top 15" DESC, "Avarage points in top 15" DESC
 /* Jaka jest średnia pozycja zawodniczki w top 8? Ile razy zawodniczka znalazła się w top 8? 
 Jaką ma średnią punktów gdy jest w top 8? Jaka jest średnia punktów top 8 ostanich 3 lat */
 
-SELECT AVG(CAST(Position as INT)) as "Avarage top 8 position", Count(Position) as "How many times in top 8", 
-AVG(CAST(Points as INT)) as "Avarage points in top 8",Players.Name
+SELECT AVG(CAST(Position as INT))  "Avarage top 8 position", 
+AVG(CAST(Points as INT))  "Avarage points in top 8", 
+Count(Position) "How many times in top 8", 
+Players.Name,
+Ranking.Date
 FROM Ranking
 INNER JOIN Players ON Players.PlayerId = Ranking.PlayerId
 WHERE position <= 8
-GROUP BY Players.Name
+GROUP BY Players.Name, Ranking.[Date]
 WITH CUBE
-ORDER BY "How many times in top 8" DESC, "Avarage points in top 8" DESC
 
 /**************************************************/
 
@@ -163,12 +165,6 @@ WHERE position = 8  AND Ranking.Date LIKE ('%12%')
 
 /* Ile zawodniczek wypada z topowej 8, w 2018 na 2019 rok */
 
-SELECT Name, Country, age, P.PlayerId, R.Position, R.Date, AVG(CAST(R.position as INT))
-FROM Players P
-JOIN Ranking R ON P.PlayerId = R.PlayerID
-WHERE R.Position <= 8
-GROUP BY Name, R.date, Country, age, P.PlayerId, R.Position, R.Date
-HAVING R.date, Country, age, P.PlayerId, R.Position, R.Date
 
 /* Testing results  */
 
