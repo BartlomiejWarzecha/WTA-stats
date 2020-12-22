@@ -29,9 +29,36 @@ FROM Players
 -- 3 queries table GrandSlam
 
 -- 5 queries between tables
+/*  
+	Ile zawodniczek przewinęło się przez top 8 w ostatnich 3 latach?   */
 
+SELECT  Name, R.[Position]
+FROM Players P
+JOIN Ranking R ON P.PlayerId = R.PlayerID
+WHERE R.[Position] <= 8
 
-/**************************************************/
+SELECT Distinct P.Name, Count(P.Name) as 'Występy w top 8'
+FROM Players P
+JOIN Ranking R ON P.PlayerId = R.PlayerID
+WHERE R.[Position] <= 8
+GROUP BY P.Name
+
+SELECT Distinct P.Name, Count(P.Name) as 'Występy w top 8' 
+FROM Players P
+JOIN Ranking R ON P.PlayerId = R.PlayerID
+WHERE R.[Position] <= 8 AND (R.[Date] LIKE('%2019-12%') OR R.[Date] LIKE('%2018-12%'))
+GROUP BY P.Name 
+
+SELECT P.Name, R.[Position]
+FROM Players P
+JOIN Ranking R ON P.PlayerId = R.PlayerID
+WHERE R.[Date] LIKE('%2018-12%')
+
+SELECT P.Name, R.position
+FROM Players P
+JOIN Ranking R ON P.PlayerId = R.PlayerID
+WHERE R.[Date] LIKE('%2019-12%')
+
 /* Jaka jest średnia wieku zawodniczek z ostatnich 3 lat top 15? 27 */
 
 SELECT AVG(CAST(P.Age as INT)) as 
