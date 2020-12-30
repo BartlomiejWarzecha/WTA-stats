@@ -209,6 +209,19 @@ FROM
 
 
 /*  */
+
+/* Ile razy w ostanich 3 latach zawodniczka przynajmniej awansowała do ćwierćfianłu Australian Open? oraz jest w najlepszej 8 średniej zdobytych punktów na turnieju. 
+Chodzi o nazwisko i pozycję*/
+
+SELECT TOP 8 G.PlayerID, P.Name, 
+G.GrandSlam, G.position
+FROM players P JOIN Grandslams G ON P.PlayerID = G.PlayerID
+WHERE G.GrandSlam = 'Australian Open' 
+ORDER BY PlayerID 
+
+
+
+
 /*  */
 /*  */
 /*  */

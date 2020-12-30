@@ -9,7 +9,6 @@ INSERT INTO dbo.Ranking
    ([RankingID],[PlayerId],[Points],[Position],[Date])
 VALUES
    ('23', '7', '4465','15','2018-12-31')
-/*End without 61*/
 
 INSERT INTO dbo.GrandSlams
    ([GrandSlamID],[PlayerId],[Position],[GrandSlam],[Date])
