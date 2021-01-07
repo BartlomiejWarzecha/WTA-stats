@@ -29,6 +29,9 @@ FROM Players
 -- 3 queries table GrandSlam
 
 -- 5 queries between tables
+
+/* All Queries */
+
 /*  
 	Ile zawodniczek przewinęło się przez top 8 w ostatnich 3 latach?   */
 
@@ -192,6 +195,33 @@ WHERE position = 8  AND Ranking.Date LIKE ('%12%')
 
 /* Ile zawodniczek wypada z topowej 8, w 2018 na 2019 rok */
 
+SELECT * 
+FROM
+Ranking
+
+SELECT P.name 'Top 8 2018 December',
+R.Date
+FROM Players P 
+JOIN Ranking R ON P.playerID = R.playerID
+WHERE R.Date = '2018-12-31' AND R.[Position] < 9
+
+/* Differences  Not in 2019: Angelique Kerber(2), Caroline Wozniacki(3), Sloane Stephens(6) 
+		In 2019, Not in 2018: Ashley Barty(1), Bianca Andreescu(5), Belinda Bencic(8) */
+
+SELECT P.name 'Top 8 2019 December',
+R.Date
+FROM Players P 
+JOIN Ranking R ON P.playerID = R.playerID
+WHERE R.Date = '2019-12-30' AND R.[Position] < 9
+
+/* Differences  Not in 2020: Belinda Bencic(8),
+		In 2020, Not in 2019: Sofia Kenin(4)*/
+SELECT P.name 'Top 8 2020 December',
+R.Date
+FROM Players P 
+JOIN Ranking R ON P.playerID = R.playerID
+WHERE R.Date = '2020-12-07' AND R.[Position] < 9
+
 
 /* Testing results  */
 
@@ -204,25 +234,23 @@ SELECT * from Ranking where playerID  = 19
 /*  Ile zawodniczek z top 15 ostanich 3 lat doszło przynajmniej do ćwierćfianału wielkich turniejów?
 Ile było niespodzianek? */
 
-SELECT Count(GrandSlam), R.Name
-FROM 
-
+SELECT P.name,
+G.position
+FROM Players P 
+JOIN Ranking R ON P.PlayerId = R.PlayerId
+JOIN GrandSlams G ON R.PlayerId = G.PlayerId
+WHERE G.GrandSlam = 'Australian Open' 
 
 /*  */
 
 /* Ile razy w ostanich 3 latach zawodniczka przynajmniej awansowała do ćwierćfianłu Australian Open? oraz jest w najlepszej 8 średniej zdobytych punktów na turnieju. 
 Chodzi o nazwisko i pozycję*/
 
-SELECT TOP 8 G.PlayerID, P.Name, 
+SELECT  P.Name, 
 G.GrandSlam, G.position
 FROM players P JOIN Grandslams G ON P.PlayerID = G.PlayerID
 WHERE G.GrandSlam = 'Australian Open' 
-ORDER BY PlayerID 
 
-
-
-
-/*  */
 /*  */
 /*  */
 /*  */

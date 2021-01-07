@@ -7,7 +7,6 @@ IF NOT EXISTS (
 )
 CREATE DATABASE [WTA-stats]
 
-
 USE [WTA-stats]
 -- Create a new table called 'Customers' in schema 'dbo'
 -- Drop the table if it already exist
