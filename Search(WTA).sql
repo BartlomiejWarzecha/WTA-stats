@@ -40,13 +40,13 @@ FROM Players P
 JOIN Ranking R ON P.PlayerId = R.PlayerID
 WHERE R.[Position] <= 8
 
-SELECT Distinct P.Name, Count(P.Name) as 'Występy w top 8'
+SELECT Distinct P.Name, Count(P.Name) 'Występy w top 8'
 FROM Players P
 JOIN Ranking R ON P.PlayerId = R.PlayerID
 WHERE R.[Position] <= 8
 GROUP BY P.Name
 
-SELECT Distinct P.Name, Count(P.Name) as 'Występy w top 8' 
+SELECT Distinct P.Name, Count(P.Name) 'Występy w top 8' 
 FROM Players P
 JOIN Ranking R ON P.PlayerId = R.PlayerID
 WHERE R.[Position] <= 8 AND (R.[Date] LIKE('%2019-12%') OR R.[Date] LIKE('%2018-12%'))
@@ -62,27 +62,36 @@ FROM Players P
 JOIN Ranking R ON P.PlayerId = R.PlayerID
 WHERE R.[Date] LIKE('%2019-12%')
 
+/* Jaka jest średnia lat zawodniczek TOP 8 w 2020 roku?*/
+
+SELECT SUM(CAST(P.Age as FLOAT)) 
+'AVG AGE'
+FROM Players P  
+JOIN Ranking R
+ON R.PlayerId = P.PlayerId
+WHERE R.position <= 8 
+
 /* Jaka jest średnia wieku zawodniczek z ostatnich 3 lat top 15? 27 */
 
-SELECT AVG(CAST(P.Age as INT)) as 
+SELECT AVG(CAST(P.Age as INT)) 
 'AVG AGE', R.Position, P.Name
-FROM Players as P INNER JOIN Ranking as R
+FROM Players P JOIN Ranking R
 ON R.PlayerId = P.PlayerId
 GROUP BY Name, R.Position
 Having Position <=15 
 
-SELECT AVG(CAST(P.Age as INT)) as 
+SELECT AVG(CAST(P.Age as INT)) 
 'AVG AGE'
-FROM Players as P INNER JOIN Ranking as R
+FROM Players P JOIN Ranking R
 ON R.PlayerId = P.PlayerId
 WHERE R.position <= 15
 
 /**************************************************/
 /* Jaka jest średnia wieku zawodniczek z ostatnich 3 lat top 8? 27 */
 
-SELECT AVG(CAST(P.Age as INT)) as 
+SELECT AVG(CAST(P.Age as INT)) 
 'AVG AGE'
-FROM Players as P INNER JOIN Ranking as R
+FROM Players P JOIN Ranking R
 ON R.PlayerId = P.PlayerId
 WHERE R.position <= 8
 
@@ -90,8 +99,8 @@ WHERE R.position <= 8
 
 /* Jaki kraj ma najwiecej reprezentatek w top 15? USA 5*/
 
-SELECT COUNT(Country) as 'Most frequent country', Country
-FROM Players INNER JOIN Ranking ON Players.PlayerId = Ranking.PlayerId
+SELECT COUNT(Country) 'Most frequent country', Country
+FROM Players JOIN Ranking ON Players.PlayerId = Ranking.PlayerId
 WHERE Ranking.position <= 8
 GROUP BY Country WITH ROLLUP 
 
@@ -99,8 +108,10 @@ GROUP BY Country WITH ROLLUP
 
 /* Jaki kraj ma najwiecej reprezentatek w top 8? USA 5*/
 
-SELECT COUNT(Country) as 'Most frequent country', Country 
-FROM Players as P INNER JOIN Ranking as R ON
+SELECT COUNT(Country) 'Most frequent country', Country 
+FROM Players P 
+
+JOIN Ranking R ON
 R.PlayerId = P.PlayerId
 GROUP BY R.Position, Country
 HAVING R.position <= 8
@@ -111,10 +122,10 @@ HAVING R.position <= 8
 Jaką ma średnią punktów gdy jest w top 15? Jaka jest średnia punktów top 15 ostanich 3 lat  
 */
 
-SELECT AVG(CAST(Position as INT)) as "Avarage top 15 position", Count(Position) as "How many times in top 15" ,
-AVG(CAST(Points as INT)) as "Avarage points in top 15",Players.Name
+SELECT AVG(CAST(Position as INT)) "Avarage top 15 position", Count(Position) "How many times in top 15" ,
+AVG(CAST(Points as INT)) "Avarage points in top 15",Players.Name
 FROM Ranking
-INNER JOIN Players ON Players.PlayerId = Ranking.PlayerId
+JOIN Players ON Players.PlayerId = Ranking.PlayerId
 WHERE position <= 15
 GROUP BY Players.Name
 WITH CUBE
@@ -132,7 +143,7 @@ Count(Position) "How many times in top 8",
 Players.Name,
 Ranking.Date
 FROM Ranking
-INNER JOIN Players ON Players.PlayerId = Ranking.PlayerId
+JOIN Players ON Players.PlayerId = Ranking.PlayerId
 WHERE position <= 8
 GROUP BY Players.Name, Ranking.[Date]
 WITH CUBE
@@ -142,10 +153,10 @@ WITH CUBE
 /* Czerwiec Jaka jest średnia pozycja zawodniczki w top 8 ? Czerwiec Ile razy zawodniczka znalazła się w top 8? 
 Czerwiec Jaką ma średnią punktów gdy jest w top 8?  Czerwiec Jaka jest średnia punktów top 8 ostanich 3 lat*/
 
-SELECT  AVG(CAST(Position as INT)) as "Avarage top 8 position", Count(Position) as "How many times in top 8", 
-AVG(CAST(Points as INT)) as "Avarage points in top 8",Players.Name
+SELECT  AVG(CAST(Position as INT)) "Avarage top 8 position", Count(Position) "How many times in top 8", 
+AVG(CAST(Points as INT)) "Avarage points in top 8",Players.Name
 FROM Ranking
-INNER JOIN Players ON Players.PlayerId = Ranking.PlayerId
+JOIN Players ON Players.PlayerId = Ranking.PlayerId
 WHERE position <= 8 AND Ranking.Date LIKE ('%12%')
 GROUP BY Players.Name
 WITH CUBE
@@ -155,19 +166,19 @@ ORDER BY "Avarage points in top 8" DESC
 /**************************************************/
 /* Jaki jest próg wejśćiowy do top 15?*/
 
-SELECT  AVG(CAST(Points as INT)) as "Avarage top 15 minimal points "
+SELECT  AVG(CAST(Points as INT)) "Avarage top 15 minimal points "
 FROM Ranking
 WHERE position = 15 
 
 /* Jaki jest próg wejśćiowy do top 15 w czerwcu?*/
 
-SELECT  AVG(CAST(Points as INT)) as "Avarage top 15 minimal points June"
+SELECT  AVG(CAST(Points as INT)) "Avarage top 15 minimal points June"
 FROM Ranking
 WHERE position = 15  AND Ranking.Date LIKE ('%06%') 
 
 /* Jaki jest próg wejśćiowy do top 15 w Grudniu?*/
 
-SELECT  AVG(CAST(Points as INT)) as "Avarage top 15 minimal points December"
+SELECT  AVG(CAST(Points as INT)) "Avarage top 15 minimal points December"
 FROM Ranking
 WHERE position = 15  AND Ranking.Date LIKE ('%12%') 
 
@@ -175,19 +186,19 @@ WHERE position = 15  AND Ranking.Date LIKE ('%12%')
 
 /* Jaki jest próg wejśćiowy do top 8?*/
 
-SELECT  AVG(CAST(Points as INT)) as "Avarage top 8 minimal points "
+SELECT  AVG(CAST(Points as INT)) "Avarage top 8 minimal points "
 FROM Ranking
 WHERE position = 8 
 
 /* Jaki jest próg wejśćiowy do top 8 w czerwcu?*/
 
-SELECT  AVG(CAST(Points as INT)) as "Avarage top 8 minimal points June"
+SELECT  AVG(CAST(Points as INT)) "Avarage top 8 minimal points June"
 FROM Ranking
 WHERE position = 8  AND Ranking.Date LIKE ('%06%') 
 
 /* Jaki jest próg wejśćiowy do top 8 w Grudniu?*/
 
-SELECT  AVG(CAST(Points as INT)) as "Avarage top 8 minimal points December"
+SELECT  AVG(CAST(Points as INT)) "Avarage top 8 minimal points December"
 FROM Ranking
 WHERE position = 8  AND Ranking.Date LIKE ('%12%') 
 
