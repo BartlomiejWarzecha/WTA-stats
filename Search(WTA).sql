@@ -62,6 +62,16 @@ FROM Players P
 JOIN Ranking R ON P.PlayerId = R.PlayerID
 WHERE R.[Date] LIKE('%2019-12%')
 
+
+/* Jaka jest  liczba zawodniczek powyżej 30 roku życia które były w top8 ostatnich 3 lat*/
+
+SELECT P.name, P.Age,
+R.Position, R.DATE
+FROM Players P
+JOIN Ranking R ON P.PlayerId = R.PlayerId
+WHERE R.[Position] <= 8 AND P.Age <= 23
+
+
 /* Jaka jest średnia lat zawodniczek TOP 8 w 2020 roku?*/
 
 SELECT SUM(CAST(P.Age as FLOAT)) 
@@ -89,7 +99,7 @@ WHERE R.position <= 15
 /**************************************************/
 /* Jaka jest średnia wieku zawodniczek z ostatnich 3 lat top 8? 27 */
 
-SELECT AVG(CAST(P.Age as INT)) 
+SELECT SUM(CAST(P.Age as INT)) 
 'AVG AGE'
 FROM Players P JOIN Ranking R
 ON R.PlayerId = P.PlayerId
