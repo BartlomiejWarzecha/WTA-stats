@@ -4,21 +4,20 @@
     
    + This project is made to predict WTA 2021 season results. 
      - Top 8 players at the end of the season
-     - WTA tournaments results: GrandSlam, Tournaments
+     - WTA tournaments results: GrandSlams, Premier 1000, Premier 500
 
 ### What data is stored here    
    + Currently the idea is to implement data from 2018,2019 and 2020. 
-       - This data conteined:
+       - This data conteins:
            - top 15 players ranking(six month period)
            - WTA GrandSlam (Quaterfinalist, SemiFinalist, Finalist, Winner)
-           - WTA winner(24 tournaments included in WTA Fantasy Season challange plan [here](https://fantasy.wtatennis.com/static/how-to-play)
+           - WTA winner(Quaterfinalist, SemiFinalist, Finalist, Winners) 24 tournaments which you can find [here](https://fantasy.wtatennis.com/static/how-to-play))
  
 ### Essay
-   + There is Essay in process.Essay contains preperation before making decision. How I am trying to predict succesfully, sql queries explain and 
+   + There is Essay in process. Essay contains preperation before making decision. How I am trying to predict succesfully. Sql queries explain and 
    my opinion about chances to predict properly.
 
 ### Database
-
 
 ### 1.Create File
 
@@ -53,14 +52,8 @@ In this file I am manipulaiting on values in Tables:
 
 ### 3. Search File
 
-In this file Iam making queries for all tables. Later I want to make them into stored procedures.
+In this file Iam making queries for all tables. Right now I am doing this in random order. Later I want to make them into stored procedures and group them properly.
 
-Simple aim is to make:
-   - 3 table queriesPlayers
-   - 3 table queriesRanking
-   - 3 table queriesTournaments
-   - 3 table queriesGrandSlam
-   - 5 betweequeriesn tables
 
 
 
