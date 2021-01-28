@@ -11,7 +11,7 @@
        - This data conteins:
            - top 15 players ranking(six month period)
            - WTA GrandSlam (Quaterfinalist, SemiFinalist, Finalist, Winner)
-           - WTA winner(Quaterfinalist, SemiFinalist, Finalist, Winners) 24 tournaments which you can find [here](https://fantasy.wtatennis.com/static/how-to-play))
+           - WTA winner(Quaterfinalist, SemiFinalist, Finalist, Winners) 24 tournaments which you can find [here](https://fantasy.wtatennis.com/static/how-to-play)
  
 ### Essay
    + There is Essay in process. Essay contains preperation before making decision. How I am trying to predict succesfully. Sql queries explain and 
