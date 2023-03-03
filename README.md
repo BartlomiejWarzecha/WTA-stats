@@ -1,6 +1,6 @@
 ## Technologies
 * SQL
-# RECENT UPDATE *************************************
+# Recent Update ***********
 _* Essay has been made, 5.0 - A result :) _
 * Interest put in this project evaluated to creation of application which is used for  making predictions in "fun: way [here](https://github.com/BartlomiejWarzecha/NewTennisTournament)
 * Ideas stored here can contribute to project above in future updates with a lot of automation
