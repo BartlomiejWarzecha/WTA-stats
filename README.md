@@ -1,4 +1,9 @@
-﻿# WTA-stats
+#Technologies
+*SQL
+
+*Essay has been made, 5.0 - A result :) 
+*Interest put in this project evaluated to creation of application which is used for  making predictions in "fun: way [here](https://github.com/BartlomiejWarzecha/NewTennisTournament)
+*Ideas stored here can contribute to project above in future updates with a lot of automation
 
 ### What this project is about?
     
@@ -52,8 +57,7 @@ In this file I am manipulaiting on values in Tables:
 
 ### 3. Search File
 
-In this file Iam making queries for all tables. Right now I am doing this in random order. Later I want to make them into stored procedures and group them properly.
-
+In this file Iam making queries for all tables
 
 
 
